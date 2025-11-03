@@ -8,10 +8,4 @@ variable "min_size" {}
 variable "max_size" {}
 variable "sg_ids" { type = list(string) }
 variable "alb_sg_id" {}
-variable "user_data" { default = "#! /bin/bash
-yum install httpd git -y
-systemctl start httpd
-systemctl status httpd
-cd /var/www/html
-git clone https://github.com/ReyazShaik/hotstar-app.git
-mv hotstar-app/* ." }
+variable "user_data" { default = "default = "#!/bin/bash\nyum install -y httpd\nsystemctl start httpd\n" }
