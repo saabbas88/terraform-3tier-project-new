@@ -3,7 +3,7 @@ resource "aws_launch_template" "web" {
   image_id      = var.ami_id
   instance_type = var.instance_type
   vpc_security_group_ids = var.sg_ids
-  user_data     = base64encode(var.user_data)
+  user_data              = "${file("apache.sh")}"
 }
 
 resource "aws_autoscaling_group" "web" {
